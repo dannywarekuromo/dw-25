@@ -1,0 +1,15 @@
+<svg width="402" height="401" viewBox="0 0 402 401" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect width="400" height="400" transform="translate(0 1)" fill="#FFC310"/>
+<line x1="399.237" y1="400.5" x2="9.15527e-05" y2="400.5" stroke="#101010" stroke-dasharray="2 2"/>
+<line x1="399.428" y1="300.5" x2="0.190918" y2="300.5" stroke="#101010" stroke-dasharray="2 2"/>
+<line x1="399.619" y1="200.5" x2="0.381714" y2="200.5" stroke="#101010" stroke-dasharray="2 2"/>
+<line x1="399.809" y1="100.5" x2="0.57251" y2="100.5" stroke="#101010" stroke-dasharray="2 2"/>
+<line x1="400" y1="0.5" x2="0.763275" y2="0.5" stroke="#101010" stroke-dasharray="2 2"/>
+<line x1="1.5" y1="399.237" x2="1.5" stroke="#101010" stroke-dasharray="2 2"/>
+<line x1="101.5" y1="399.428" x2="101.5" y2="0.190796" stroke="#101010" stroke-dasharray="2 2"/>
+<line x1="201.5" y1="399.618" x2="201.5" y2="0.381592" stroke="#101010" stroke-dasharray="2 2"/>
+<line x1="301.5" y1="399.809" x2="301.5" y2="0.572266" stroke="#101010" stroke-dasharray="2 2"/>
+<line x1="401.5" y1="400" x2="401.5" y2="0.763306" stroke="#101010" stroke-dasharray="2 2"/>
+<circle cx="262" cy="143" r="16" fill="#E41111"/>
+<path d="M102 177.11L127.28 273H201.84M102 177.11L201.84 273M102 177.11L165.36 197.835M201.84 273H276.72L302 177.11M201.84 273L252.72 224.289M201.84 273V127M302 177.11L252.72 224.289M302 177.11L238.885 197.835M252.72 224.289L238.885 197.835M201.84 127L238.885 197.835M201.84 127L165.36 197.835M151.28 223.199L165.36 197.835" stroke="#101010" stroke-width="2"/>
+</svg>
