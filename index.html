@@ -11,13 +11,11 @@
 
 <body>
   <div id="app">
-    <header class="nav-bar relative padding-auto">
-      <a href="#" class="nav-link-logo mask">
-        <span class="nav-logo">
-          <img src="./assets/logos/logo.svg" alt="warekuromotion logo" width="46px" height="46px">
-        </span>
-        <span>
-          <p class="subtitle-title nav-text">WAREKUROMOTION</p>
+    <header class="nav-bar relative px-auto">
+      <a href="#" class="nav-link-logo flex-column fit-content mask">
+        <img src="./assets/logos/logo.svg" class="nav-logo" alt="warekuromotion logo">
+        <span class="nav-title subtitle-title nav-text">
+          WAREKUROMOTION
         </span>
       </a>
       <nav class="nav flex-between relative">
@@ -31,6 +29,34 @@
         <a class="link-text nav-floater" href="#">watch reel</a>
       </div>
     </header>
+    <main>
+      <section class="hero relative px-auto">
+        <div class="hero-intro">
+          <h1 class="display-title">
+            <span>dw-25</span>
+            <span class="hover-animate">daniel warekuromo - 2025</span>
+          </h1>
+        </div>
+        <div class="hero-card flex-column">
+          <div class="hero-body fit-content">
+            <p class="body-text">
+              I develop modern websites <br>
+              with informed design systems <br>
+              & immersive web experiences.
+            </p>
+          </div>
+          <div class="hero-link">
+            <a href="#" class="link-text">let's get in touch</a>
+          </div>
+        </div>
+        <div class="hero-img">
+          <img src="./assets/self-square.jpg" alt="image of Daniel Warekuromo">
+        </div>
+        <div class="hero-caret">
+          <img src="./assets/icons/scroll-carret.svg" alt="scroll indicator icon">
+        </div>
+      </section>
+    </main>
   </div>
   <script type="module" src="/src/main.js"></script>
 </body>
