@@ -12,24 +12,27 @@
 <body>
   <div id="app">
     <header class="header">
-      <div class="nav-container">
-        <div class="nav-bar px-auto">
-          <a href="#" class="nav-link-logo flex-column fit-content mask">
-            <span></span>
-            <img src="./assets/logos/logo.svg" class="nav-logo" alt="warekuromotion logo">
+      <div class="nav-container relative">
+        <div class="nav-bar relative px-auto">
+          <a href="#" class="nav-link-logo fit-content mask">
+            <span class="nav-img">
+              <img src="./assets/logos/logo.svg" class="nav-logo" alt="warekuromotion logo">
+            </span>
             <span class="nav-title subtitle-title nav-text relative">
               WAREKUROMOTION
             </span>
           </a>
           <nav class="nav relative">
             <ul class="nav-list">
-              <li class="nav-item"><a href="#" class="nav-link link-text">about</a></li>
-              <li class="nav-item"><a href="#" class="nav-link link-text">work</a></li>
-              <li class="nav-item"><a href="#" class="nav-link link-text">contact</a></li>
+              <li class="nav-item mask"><a href="#" class="nav-link link-text">about</a></li>
+              <li class="nav-item mask"><a href="#" class="nav-link link-text">work</a></li>
+              <li class="nav-item mask"><a href="#" class="nav-link link-text">contact</a></li>
             </ul>
-            <button class="btn nav-btn link-text">MENU</button>
+            <div class="nav-btn mask">
+              <button class="btn-span btn link-text">menu</button>
+            </div>
           </nav>
-          <div class="nav-floater relative">
+          <div class="nav-floater mask">
             <a class="link-text reel-link" href="./src/preloader.html">watch reel</a>
           </div>
         </div>
@@ -37,6 +40,9 @@
     </header>
     <main>
       <section class="hero relative px-auto">
+        <div class="hero-floater mask">
+          <p class="link-text mask-item">watch reel</p>
+        </div>
         <div class="hero-intro">
           <h1 class="display-title">
             <span>dw-25</span>
