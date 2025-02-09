@@ -24,9 +24,43 @@
     /* justify-content: start; */
   }
 
+  .loading-img-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+
   .loading-percentage {
     grid-row: 3/4;
     display: flex;
     align-items: end;
-    justify-content: end;
+    justify-content: right;
+  }
+
+  .preload-img {
+    width: 72px;
+    height: 72px;
+  }
+
+  .preload-img:nth-child(1) img {
+    transform: scale(.3);
+  }
+  .preload-img:nth-child(2) img {
+    transform: scale(.4);
+  }
+  .preload-img:nth-child(3) img {
+    transform: scale(.5);
+  }
+  .preload-img:nth-child(4) img {
+    transform: scale(.6);
+  }
+  .preload-img:nth-child(5) img {
+    transform: scale(.7);
+  }
+  .preload-img:nth-child(6) img {
+    transform: scale(.8);
   }
