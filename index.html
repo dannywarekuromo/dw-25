@@ -11,26 +11,57 @@
 
 <body>
   <div id="app">
-    <header class="nav-bar relative px-auto">
-      <a href="#" class="nav-link-logo flex-column fit-content mask">
-        <img src="./assets/logos/logo.svg" class="nav-logo" alt="warekuromotion logo">
-        <span class="nav-title subtitle-title nav-text relative">
-          WAREKUROMOTION
-        </span>
-      </a>
-      <nav class="nav relative">
-        <ul class="nav-list">
-          <li class="nav-item"><a href="#" class="nav-link link-text">about</a></li>
-          <li class="nav-item"><a href="#" class="nav-link link-text">work</a></li>
-          <li class="nav-item"><a href="#" class="nav-link link-text">contact</a></li>
-        </ul>
-      </nav>
-      <div class="nav-floater relative">
-        <a class="link-text reel-link" href="./src/preloader.html">watch reel</a>
+    <div class="mobile-nav px-auto py-1">
+      <div class="m-nav-header px-auto mask">
+        <button class="m-nav-btn link-text">close</button>
+      </div>
+      <ul class="m-nav-list flex-column">
+        <li class="m-nav-item mask"><a href="#" class="m-nav-link m-nav-title">home</a></li>
+        <li class="m-nav-item mask"><a href="#" class="m-nav-link m-nav-title">about</a></li>
+        <li class="m-nav-item mask"><a href="#" class="m-nav-link m-nav-title">work</a></li>
+        <li class="m-nav-item mask"><a href="#" class="m-nav-link m-nav-title">contact</a></li>
+      </ul>
+      <div class="m-nav-footer">
+        <div class="m-nav-socials">
+          <a href="#" class="link-text">instagram,</a>
+          <a href="#" class="link-text">linkedin,</a>
+          <a href="#" class="link-text">github</a>
+        </div>
+        <p class="m-nav-sign link-text">by yours truly, ware</p>
+      </div>
+    </div>
+    <header class="header">
+      <div class="nav-container">
+        <div class="nav-bar relative px-auto">
+          <a href="#" class="nav-link-logo fit-content mask">
+            <span class="nav-img">
+              <img src="./assets/logos/logo.svg" class="nav-logo" alt="warekuromotion logo">
+            </span>
+            <span class="nav-title subtitle-title nav-text relative">
+              WAREKUROMOTION
+            </span>
+          </a>
+          <nav class="nav">
+            <ul class="nav-list flex-column">
+              <li class="nav-item mask"><a href="#" class="nav-link link-text">about</a></li>
+              <li class="nav-item mask"><a href="#" class="nav-link link-text">work</a></li>
+              <li class="nav-item mask"><a href="#" class="nav-link link-text">contact</a></li>
+            </ul>
+            <div class="nav-btn mask">
+              <button class="btn-span btn link-text">menu</button>
+            </div>
+          </nav>
+          <div class="nav-floater mask">
+            <a class="link-text reel-link" href="./src/preloader.html">watch reel</a>
+          </div>
+        </div>
       </div>
     </header>
     <main>
       <section class="hero relative px-auto">
+        <div class="hero-floater mask">
+          <p class="link-text mask-item">watch reel</p>
+        </div>
         <div class="hero-intro">
           <h1 class="display-title">
             <span>dw-25</span>
