@@ -1,5 +1,12 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&display=swap');
+@font-face {
+  font-family: "Montserrat";
+  src: url(./fonts/Montserrat-VariableFont_wght.ttf);
+}
 
+@font-face {
+  font-family: "Oswald";
+  src: url(./fonts/Oswald-VariableFont_wght.ttf);
+}
 * {
   padding: 0;
   margin: 0;
@@ -154,8 +161,7 @@ button {
 
 /* font styling */
 .display-title,
-.subtitle-title,
-.subtitle-title-bold,
+.mid-title,
 .link-text,
 .body-text,
 .body-text-bold,
@@ -203,6 +209,7 @@ button {
   font-size: var(--title-2);
   font-weight: 500;
   letter-spacing: -1px;
+  line-height: 1;
 }
 
 .text-title,
@@ -374,6 +381,8 @@ header {
   /* outline: 1px dotted var(--accent-clr); */
   width: 100%;
   margin: 0 auto;
+  padding-left: .5rem;
+  padding-right: .5rem;
 }
 
 .nav-link-logo {
@@ -637,8 +646,11 @@ header {
 }
 
 .testimonials-case {
-  height: 50vh;
+  height: 70vh;
   overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .testimonial-card {
@@ -671,10 +683,13 @@ footer {
   display: flex;
   align-items: center;
   justify-content: center;
+  width: 100%;
+  height: 80vh;
 }
 
 .animated-svg svg {
   width: 24rem;
+  /* width: 50%; */
 }
 
 .grid-line {
