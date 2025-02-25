@@ -3,26 +3,24 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="./assets/vesper-jack.jpg" />
+  <link rel="icon" type="image/svg+xml" href="./assets/logo-accent (1).svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./src/style.css">
   <title>Daniel Warekuromo - Independent Front-end Developer</title>
 </head>
 
 <body>
-  <div id="app">
+  <div id="app" class="mask">
+    <div class="custom-cursor"></div>
     <div class="mobile-nav px-auto py-3">
-      <div class="m-nav-header px-auto mask">
-        <button class="m-nav-btn link-text">close</button>
-      </div>
       <ul class="m-nav-list flex-column-2">
-        <li class="m-nav-item mask"><a href="#" class="m-nav-link m-nav-title">home</a></li>
-        <li class="m-nav-item mask"><a href="#" class="m-nav-link m-nav-title">about</a></li>
-        <li class="m-nav-item mask"><a href="#" class="m-nav-link m-nav-title">work</a></li>
-        <li class="m-nav-item mask"><a href="#" class="m-nav-link m-nav-title">contact</a></li>
+        <li class="m-nav-item mask"><a href="/" class="m-nav-link m-nav-title">home</a></li>
+        <li class="m-nav-item mask"><a href="#about" class="m-nav-link m-nav-title">about</a></li>
+        <li class="m-nav-item mask"><a href="#work" class="m-nav-link m-nav-title">work</a></li>
+        <li class="m-nav-item mask"><a href="#contact" class="m-nav-link m-nav-title">contact</a></li>
         <li class="m-nav-item mask"><a href="#" class="m-nav-link m-nav-title">watch reel</a></li>
       </ul>
-      <div class="m-nav-footer\">
+      <div class="m-nav-footer">
         <div class="flex-column-1">
           <p class="body-text-cap">
             connect with me on socials;
@@ -38,7 +36,7 @@
     </div>
     <header class="header">
       <div class="nav-container px-auto">
-        <div class="nav-bar relative">
+        <div class="nav-bar relative hover-link">
           <a href="#" class="nav-link-logo fit-content mask">
             <span class="nav-img">
               <img src="./assets/logos/logo.svg" class="nav-logo" alt="warekuromotion logo">
@@ -49,122 +47,151 @@
           </a>
           <nav class="nav">
             <ul class="nav-list flex-column-3">
-              <li class="nav-item mask"><a href="#" class="nav-link link-text">about</a></li>
-              <li class="nav-item mask"><a href="#" class="nav-link link-text">work</a></li>
-              <li class="nav-item mask"><a href="#" class="nav-link link-text">contact</a></li>
+              <li class="nav-item mask"><a href="#about" class="nav-link hover-link link-text">about</a></li>
+              <li class="nav-item mask"><a href="#work" class="nav-link hover-link link-text">work</a></li>
+              <li class="nav-item mask"><a href="#contact" class="nav-link hover-link link-text">contact</a></li>
             </ul>
             <div class="nav-btn mask">
-              <button class="btn-span btn link-text">menu</button>
+              <button class="btn-span mobile-btn hover-link btn link-text">menu</button>
             </div>
           </nav>
           <div class="nav-floater mask">
-            <a class="link-text reel-link" href="./src/preloader.html">watch reel</a>
+            <a class="link-text reel-link nav-link" href="./src/preloader.html">watch reel</a>
           </div>
         </div>
       </div>
     </header>
     <main>
       <section class="hero relative pt-6 px-auto">
-        <div class="hero-floater mask">
-          <p class="link-text mask-item">watch reel</p>
-        </div>
         <div class="hero-intro">
-          <h1 class="display-title">
-            <span>DW-25</span>
-            <span class="hover-animate">daniel warekuromo - 2025</span>
+          <h1 class="display-title mask hover-anim">
+            <span class="hero-title">DW-25</span>
           </h1>
         </div>
         <div class="hero-card flex-column-2">
           <div class="hero-body fit-content">
-            <p class="body-text flex-column">
-              <span>I develop modern websites</span>
-              <span>with informed design systems</span>
-              <span>& immersive web experiences.</span>
+            <p class="body-text flex-column mask">
+              <span class="hero-span">I develop modern websites</span>
+              <span class="hero-span">with informed design systems</span>
+              <span class="hero-span">& immersive web experiences.</span>
             </p>
           </div>
-          <div class="hero-link">
-            <a href="#" class="link-text">let's work together</a>
+          <div class="hero-link mask hero-span relative">
+            <a href="#" class="link-text hover-link hero-cta">let's work together</a>
           </div>
         </div>
-        <div class="hero-img">
-          <img src="./assets/self-square.jpg" alt="Potrait of Daniel Warekuromo">
+        <div class="hero-img mask">
+          <img class="img-obj hover-anim" src="./assets/self-square.jpg" alt="Potrait of Daniel Warekuromo">
         </div>
-        <div class="hero-caret">
-          <img src="./assets/icons/scroll-carret.svg" alt="scroll indicator icon">
+        <div class="hero-caret mask">
+          <svg class="scroll-indicator hover-anim" width="69" height="70" viewBox="0 0 69 70" fill="none"
+            xmlns="http://www.w3.org/2000/svg">
+            <rect class="left-angle hero-caret-stick" x="62.9412" y="30.1421" width="8" height="48"
+              transform="rotate(45 62.9412 30.1421)" fill="#101010" />
+            <rect class="right-angle hero-caret-stick" y="34.7991" width="8" height="48"
+              transform="rotate(-45 0 34.7991)" fill="#101010" />
+            <rect class="center-angle hero-caret-stick" x="31" width="8" height="63" fill="#101010" />
+          </svg>
+
         </div>
       </section>
-      <section class="about relative px-auto pt-6">
-        <p class="fit-content caption-title absolute">/ about /</p>
-        <div class="about-intro">
-          <p class="body-text-bold">
-            I am Daniel Warekuromo; a computer scientist with a knack for creative expressions with web technologies. I
-            craft interactive and scalable experiences with, code as my medium and the web as my canvas of choice.
+      <section id="about" class="about full-height px-auto">
+        <div class="about-panel relative">
+          <p class="fit-content caption-title absolute">/ about /</p>
+          <div class="about-intro">
+            <p class="body-text-bold hover-anim">
+              <span class="slide-text">I am Daniel Warekuromo; a computer scientist </span><span class="slide-text">with
+                a knack for creative expressions with web technologies.</span>
+              <span class="slide-text">I
+                develop interactive and scalable experiences</span><span class="slide-text"> with, code as my medium and
+                the web as my canvas of choice.</span>
+            </p>
+          </div>
+        </div>
+      </section>
+      <section class="services px-auto">
+        <p class="fit-content caption-title pb-4 ">/ services /</p>
+        <div class="service-text-panel">
+          <p class="body-text-cap"><span class="slide-text-3">i leverage front-end technologies, </span><span
+              class="slide-text-3">with graphics and motion software </span><span class="slide-text-3">to develop
+              immersive digital experiences.</span></p>
+        </div>
+        <div class="services-container py-4 flex-column">
+          <div class="service-card py-4 flex-column-1">
+            <div class="service-title mask hover-anim">
+              <p class="text-title service-text-title"><span class="service-span-title">Web Development</span></p>
+              <div class="carret-case">
+                <svg class="service-carret" width="48" height="48" viewBox="0 0 48 48" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="20" width="8" height="48" fill="#101010" />
+                  <rect y="28" width="8" height="48" transform="rotate(-90 0 28)" fill="#101010" />
+                </svg>
+
+              </div>
+            </div>
+            <div class="service-desc">
+              <p class="body-text">
+                <span>Front-end Technologies, Responsive</span> 
+                <span> Website, Version Control.</span>
+              </p>
+            </div>
+          </div>
+          <div class="service-card py-4 flex-column-1">
+            <div class="service-title mask hover-anim">
+              <p class="text-title service-text-title"><span class="service-span-title">Motion/Interaction</span></p>
+              <div class="carret-case">
+                <svg class="service-carret" width="48" height="48" viewBox="0 0 48 48" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="20" width="8" height="48" fill="#101010" />
+                  <rect y="28" width="8" height="48" transform="rotate(-90 0 28)" fill="#101010" />
+                </svg>
+              </div>
+            </div>
+            <div class="service-desc">
+              <p class="body-text">
+                <span>2D/3D Animation, Web Motion </span>
+                <span> Integration & Interaction.</span>
+              </p>
+            </div>
+          </div>
+          <div class="service-card py-4 flex-column-1">
+            <div class="service-title mask hover-anim">
+              <p class="text-title service-text-title"><span class="service-span-title">Art Direction</span></p>
+              <div class="carret-case">
+                <svg class="service-carret" width="48" height="48" viewBox="0 0 48 48" fill="none"
+                  xmlns="http://www.w3.org/2000/svg">
+                  <rect x="20" width="8" height="48" fill="#101010" />
+                  <rect y="28" width="8" height="48" transform="rotate(-90 0 28)" fill="#101010" />
+                </svg>
+              </div>
+            </div>
+            <div class="service-desc">
+              <p class="body-text">
+                <span>Design System, Visual Assets,</span>
+                <span>Illustration Sets.</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="service-panel full-height">
+          <p class="body-text-bold hover-anim">
+            <span class="slide-text-2">Long story short, I craft great websites </span><span
+              class="slide-text-2">delivering on set
+              objectives & simultaneously </span><span class="slide-text-2">maintaining a sense of
+              individuality across the World Wide Web; </span> <span class="slide-text-2">Integrating the expressive
+              nature of art and functionality of design and algorithm.</span>
           </p>
         </div>
       </section>
-      <section class="services px-auto py-6">
-        <p class="fit-content caption-title pb-4 ">/ services /</p>
-        <p class="body-text-cap fit-content">i leverage the expressive nature of art and the functionality of design to
-          craft immersive web experiences.</p>
-        <div class="services-container py-4 flex-column">
-          <div class="service-card py-3 flex-column-1">
-            <div class="service-title">
-              <p class="text-title">Web Development</p>
-              <div class="carret-case">
-                <img class="service-carret" src="./assets/icons/plus-carret.svg" alt="plus carret icon">
-              </div>
-            </div>
-            <div class="service-desc">
-              <p class="body-text">Front-end Technologies,
-                Responsive Website, Version Control.
-              </p>
-            </div>
-          </div>
-          <div class="service-card py-3 flex-column-1">
-            <div class="service-title">
-              <p class="text-title">Motion/Interaction</p>
-              <div class="carret-case">
-                <img class="service-carret" src="./assets/icons/plus-carret.svg" alt="plus carret icon">
-              </div>
-            </div>
-            <div class="service-desc">
-              <p class="body-text">2D/3D Animation,
-                Web Motion Integration & Interaction.
-              </p>
-            </div>
-          </div>
-          <div class="service-card py-3 flex-column-1">
-            <div class="service-title">
-              <p class="text-title">Art Direction</p>
-              <div class="carret-case">
-                <img class="service-carret" src="./assets/icons/plus-carret.svg" alt="plus carret icon">
-              </div>
-            </div>
-            <div class="service-desc">
-              <p class="body-text">Design System, Visual Assets,
-                Illustration Sets.
-              </p>
-            </div>
-          </div>
-        </div>
-        <p class="body-text-bold">
-          Long story short, <span class="hilite-text relative">I craft great websites</span> delivering on set
-          objectives & simultaneously maintaining a sense of
-          individuality across the World Wide Web.
-        </p>
-      </section>
-      <section class="work px-auto py-6">
+      <section id="work" class="work px-auto py-6">
         <p class="fit-content caption-title-alt pb-4 ">/ work /</p>
         <div class="work-intro-card pb-4">
           <h2 class="intro-title fit-content flex-column">
-            <span>IN</span>
-            <span>WAREKUROMOTION</span>
-            <span>WE TRUST</span>
-            <span class="hover-animate link">
-              keep scrolling
-            </span>
+            <span class="fit-content hover-anim">IN</span>
+            <span class="fit-content hover-anim">WAREKUROMOTION</span>
+            <span class="hover-anim">WE TRUST</span>
           </h2>
-          <div class="animated-svg">
+          <div class="animated-svg hover-fade">
             <svg width="562" viewBox="0 0 562 562" fill="none" xmlns="http://www.w3.org/2000/svg">
               <line class="grid-line vert-line" x1="442" y1="39" x2="442" y2="518.956" stroke="#E3DFDC"
                 stroke-width="2" />
@@ -204,13 +231,13 @@
           </div>
         </div>
         <div class="experience-container">
-          <div class="experience-card py-3 flex-column-1">
+          <div class="experience-card py-4 flex-column-1">
             <div class="experience-period">
-              <p class="text-title-alt">NOW</p>
+              <p class="text-title-alt fit-content hover-anim">NOW</p>
             </div>
             <div class="experience-desc flex-column-1">
               <div class="experience-title">
-                <p class="text-title-alt">Creative Developer</p>
+                <p class="text-title-alt hover-anim">Creative Developer</p>
               </div>
               <div class="work-desc flex">
                 <p class="body-text-cap-alt">now;</p>
@@ -220,13 +247,13 @@
               </div>
             </div>
           </div>
-          <div class="experience-card py-3 flex-column-1">
+          <div class="experience-card py-4 flex-column-1">
             <div class="experience-period">
-              <p class="text-title-alt">2023</p>
+              <p class="text-title-alt fit-content hover-anim">2023</p>
             </div>
             <div class="experience-desc flex-column-1">
               <div class="experience-title">
-                <p class="text-title-alt">Front-end Developer</p>
+                <p class="text-title-alt hover-anim">Front-end Developer</p>
               </div>
               <div class="work-desc flex">
                 <p class="body-text-cap-alt">2023;</p>
@@ -236,13 +263,13 @@
               </div>
             </div>
           </div>
-          <div class="experience-card py-3 flex-column-1">
+          <div class="experience-card py-4 flex-column-1">
             <div class="experience-period">
-              <p class="text-title-alt">2018</p>
+              <p class="text-title-alt fit-content hover-anim">2018</p>
             </div>
             <div class="experience-desc flex-column-1">
               <div class="experience-title">
-                <p class="text-title-alt">Web Developer</p>
+                <p class="text-title-alt hover-anim">Web Developer</p>
               </div>
               <div class="work-desc flex">
                 <p class="body-text-cap-alt">2018;</p>
@@ -252,13 +279,13 @@
               </div>
             </div>
           </div>
-          <div class="experience-card py-3 flex-column-1">
+          <div class="experience-card py-4 flex-column-1">
             <div class="experience-period">
-              <p class="text-title-alt">2016</p>
+              <p class="text-title-alt fit-content hover-anim">2016</p>
             </div>
             <div class="experience-desc flex-column-1">
               <div class="experience-title">
-                <p class="text-title-alt">Web Designer/Intern</p>
+                <p class="text-title-alt hover-anim">Web Designer/Intern</p>
               </div>
               <div class="work-desc flex">
                 <p class="body-text-cap-alt">2016;</p>
@@ -269,39 +296,26 @@
             </div>
           </div>
         </div>
-        <div class="testimonials pt-6">
-          <div class="testimonial-title relative fit-content">
-            <p class="mid-title-alt">Testimonials</p>
-            <span>"</span>
-          </div>
-          <div class="testimonials-case relative">
-            <div class="testimonial-card fit-content flex-column-1">
-              <p class="body-text-alt">In one word; talented, comes to mind.</p>
-              <div class="testifier">
-                <p class="body-text-cap-alt">daniel ware</p>
-                <p class="body-text-alt">Creative Developer</p>
-              </div>
+        <div class="testimonials full-height pt-6">
 
-            </div>
-          </div>
         </div>
       </section>
-      <section class="contact px-auto pt-6">
+      <section id="contact" class="hover-fade contact px-auto pt-6">
         <p class="fit-content caption-title pb-4 ">/ contact /</p>
         <div class="contact-case flex-column-3">
           <h3 class="intro-title flex-column fit-content">
             <span>Enough Said</span>
             <span>GET IN TOUCH</span>
-            <span class="hover-animate">keep scrolling</span>
           </h3>
           <div class="contact-link flex-column">
             <p class="body-text-cap">have some project idea(s)? send an email</p>
-            <a href="mailto:warekuromotion@gmail.com" class="mid-title">warekuromotion@gmail.com</a>
+            <a href="mailto:warekuromotion@gmail.com"
+              class="mid-title fit-content contact-cta mask ">warekuromotion@gmail.com</a>
           </div>
         </div>
       </section>
     </main>
-    <footer class="px-auto pt-5 pb-3">
+    <footer class="px-auto hover-fade pt-5 pb-3">
       <div class="footer-socials flex-column-1">
         <p class="body-text-cap">
           connect with me on socials;
