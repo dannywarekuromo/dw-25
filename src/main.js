@@ -1,14 +1,20 @@
 import { gsap, ScrollTrigger } from "../node_modules/gsap/all.js";
 import Lenis from "../node_modules/lenis/dist/lenis.mjs";
 
-/////////////// register gsap plugins 
+/////////////// register gsap plugins: 
 gsap.registerPlugin(ScrollTrigger);
 
-//////////////// gsap timelines 
+//////////////// gsap timelines: 
 let tl = gsap.timeline({ defaults: { duration: .5 } });
-let svgtl = gsap.timeline();
+let contacttl = gsap.timeline({
+  defaults: {
+    scrollTrigger: {
+      trigger: '.contact'
+    }, duration: .5
+  }
+});
 
-////////////// initialize Lenis 
+////////////// initialize Lenis: 
 const lenis = new Lenis();
 
 function raf(time) {
@@ -20,11 +26,29 @@ function raf(time) {
 
 requestAnimationFrame(raf);
 
-///////////////// custom cursor 
+//////////////// navbar visibility:
+let previousScrollPosition = window.scrollY;
+
+let navBarAnimate = () => {
+  const navHeader = document.querySelector('.header');
+  const currentScrollPosition = window.scrollY;
+  
+  
+  (currentScrollPosition > previousScrollPosition)?
+    setTimeout(() => navHeader.classList.add('is-inactive'), 500):
+    setTimeout(() => navHeader.classList.remove('is-inactive'), 500);
+
+  previousScrollPosition = currentScrollPosition;
+}
+
+
+
+
+///////////////// custom cursor: 
 const gallantCursor = document.querySelector('.custom-cursor');
 
 
-///////////////// mobile navigation animation
+///////////////// mobile navigation animation:
 const mobileNav = document.querySelector('.mobile-nav');
 const mobileBtn = document.querySelector('.mobile-btn');
 
@@ -38,7 +62,7 @@ const animateCursorPosition = (event) => {
   gallantCursor.style.left = `${event.clientX}px`;
 };
 
-////////////////// intro text animations 
+////////////////// intro text animations: 
 tl.from('.nav-link', {
   y: 50, stagger: .2
 })
@@ -56,13 +80,22 @@ tl.from('.hero-title', {
     opacity: 0, stagger: .1
   })
 
-//////////////// scroll text animation   
+contacttl.from('.contact-roll', {
+  opacity: 0,
+  y: 40
+})
+  .from('.contact-caption', {
+    opacity: 0,
+    y: 40
+  })
+
+//////////////// scroll text animation:   
 gsap.from(
   '.slide-text', {
   scrollTrigger: {
     trigger: '.about-intro',
-    start: 'top center',
-    end: 'bottom center',
+    start: 'top 80%',
+    end: 'center center',
     scrub: true
   },
   opacity: 0.6,
@@ -77,7 +110,7 @@ gsap.from(
   scrollTrigger: {
     trigger: '.service-panel',
     scrub: true,
-    start: 'top center',
+    start: 'top 80%',
     end: 'center center',
   },
   opacity: 0.5,
@@ -87,11 +120,22 @@ gsap.from(
 }
 )
 
+gsap.from('.hi-liter', {
+  scrollTrigger: {
+    trigger: '.service-panel',
+    start: 'top center',
+    end: 'top top',
+    scrub: true
+  },
+  width: 0,
+  stagger: .3
+})
+
 gsap.from(
   '.slide-text-3', {
   scrollTrigger: {
-    trigger: '.service-text-panel',
-    end: 'top center',
+    trigger: '.services',
+    start: 'top 80%',
   },
   opacity: 0,
   y: 40,
@@ -103,27 +147,87 @@ gsap.from(
 gsap.from('.service-text-title', {
   scrollTrigger: {
     trigger: '.services-container',
-    start: 'top center'
+    start: 'top 75%'
   },
   opacity: 0,
   y: 100,
   duration: .5,
   stagger: .3
-}, console.log("it's going"));
+});
 
 gsap.from('.carret-case', {
   scrollTrigger: {
     trigger: '.services-container',
-    start: 'top center'
+    start: 'top 75%'
   },
   opacity: 0,
   y: 100,
   duration: .5,
   stagger: .3
-}, console.log("it's going"));
+});
+
+gsap.from('.intro-roll', {
+  scrollTrigger: {
+    trigger: '.work',
+    start: 'top top'
+  },
+  opacity: 0,
+  y: 100,
+  duration: .5,
+  stagger: .3
+});
+
+gsap.from('.period-roll', {
+  scrollTrigger: {
+    trigger: '.experience-container',
+    start: 'top 80%'
+  },
+  opacity: 0,
+  y: 100,
+  duration: .5,
+  stagger: .3
+});
+
+gsap.from('.role-roll', {
+  scrollTrigger: {
+    trigger: '.experience-container',
+    start: 'top 80%'
+  },
+  opacity: 0,
+  y: 100,
+  duration: .5,
+  stagger: .3
+});
+
+gsap.from('.agency-roll', {
+  scrollTrigger: {
+    trigger: '.agency-roll',
+    start: 'top 80%'
+  },
+  opacity: 0,
+  y: 100,
+  duration: .5,
+  stagger: .3
+});
 
 
-/////////////////// text hover cursor animation
+
+/////////////////// vessel and vesper animation: 
+const animateSVG = () => {
+  // Get DOM elements
+  const svgContainer = document.querySelector('.animated-svg');
+  const svg = document.querySelector('.vessel-vesper');
+
+  // Calculate trigger point considering viewport:
+  let triggerPoint = window.scrollY;
+  let trigger = svgContainer.offsetTop - 400;
+
+  if (triggerPoint > trigger) {
+    setTimeout(() => svg.classList.add('is-active'), 500);
+  }
+};
+
+/////////////////// text hover cursor animation:
 const hoverScale = document.querySelectorAll('.hover-anim');
 const hoverFade = document.querySelectorAll('.hover-fade');
 const hoverLinks = document.querySelectorAll('.hover-link');
@@ -148,7 +252,7 @@ hoverFade.forEach(fade => {
   fade.addEventListener('mouseleave', () => cursorAnimate2.reverse());
 })
 
-///////////////// service title hover animation
+///////////////// service text hover animation:
 const serviceCard = gsap.utils.toArray('.service-card');
 
 serviceCard.forEach((card,) => {
@@ -170,9 +274,11 @@ serviceCard.forEach((card,) => {
   })
 })
 
-////////////// vessel & vesper svg animation 
-// svgtl.fromTo('.grid-line', {
-//   dashoffset: 1
-// }, {dashoffset: 0});
+////////////// on-scroll event trigger:
+window.addEventListener('scroll', () => {
+  animateSVG();
+  navBarAnimate();
+  }
+    );
 
 window.addEventListener('mousemove', animateCursorPosition);

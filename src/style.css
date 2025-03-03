@@ -117,6 +117,7 @@
 
 @media (min-width: 1024px) {
   :root {
+    --title-2: 2.5rem;
     --title-3: 3.5rem;
   }
 }
@@ -133,6 +134,7 @@
 html,
 body {
   background-color: var(--dorminant-clr);
+  scroll-behavior: smooth;
 }
 
 img,
@@ -211,7 +213,7 @@ button {
   font-size: var(--title-2);
   font-weight: 500;
   letter-spacing: -1px;
-  line-height: 1;
+  line-height: .6;
 }
 
 .text-title,
@@ -262,17 +264,7 @@ button {
   line-height: 1.6;
 }
 
-.hilite-text::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 100%;
-  height: var(--ws-3);
-  background-color: var(--splash-clr);
-  left: 0px;
-  top: var(--ws-3);
-  z-index: var(--layer-1);
-}
+
 
 .m-nav-title {
   font-family: var(--title-ff);
@@ -369,12 +361,17 @@ button {
 
 
 /* navigation  */
-header {
+.header {
   position: fixed;
   width: 100%;
   z-index: var(--layer-5);
   left: 0px;
   top: var(--ws-3);
+  transition: all 0.5s ease-in;
+}
+
+.header.is-inactive {
+  top: -100px;
 }
 
 .nav-container {
@@ -598,6 +595,33 @@ header {
   max-width: 256px;
 }
 
+.service-desc .body-text > *{ 
+  display: block;
+}
+
+.hi-liter-1 {
+  width: 100%;
+  height: var(--ws-3);
+  background-color: var(--splash-clr);
+  left: 0;
+  top: var(--ws-3);
+  z-index: var(--layer-2);
+}
+
+.hi-liter-2 {
+  width: 50%;
+  height: var(--ws-3);
+  background-color: var(--splash-clr);
+  left: 0;
+  top: 56px;
+  z-index: var(--layer-2);
+}
+
+p .slide-text-2 {
+  z-index: var(--layer-3);
+  position: relative;
+}
+
 /* work  */
 .work {
   background-color: var(--complimentary-clr);
@@ -733,7 +757,16 @@ footer {
   /* width: 50%; */
 }
 
-.grid-line {
+.vessel-vesper {
+  transition: all o.8 ease-in-out;
+  opacity: 0;
+}
+
+.vessel-vesper.is-active {
+  opacity: 1;
+}
+
+.vessel-vesper.is-active .grid-line {
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
   animation: grid 5s reverse;
@@ -749,7 +782,7 @@ footer {
   }
 }
 
-.ingrid {
+.vessel-vesper.is-active .ingrid {
   stroke-dasharray: 0, 4;
   stroke-dashoffset: 800;
   animation: ingrid 5.7s .5s reverse;
@@ -772,13 +805,13 @@ footer {
   }
 }
 
-.vesper {
+.vessel-vesper.is-active .vesper {
   animation: fadein 1s 3s forwards;
   position: absolute;
   top: 100%;
 }
 
-.vessel {
+.vessel-vesper.is-active .vessel {
   stroke-dasharray: 300;
   stroke-dashoffset: 300;
   animation: drawline 1s 3.5s forwards;
@@ -1026,6 +1059,11 @@ footer {
     justify-content: end;
   }
 
+  /* misc  */
+  .hi-liter-2 {
+    top: 72px;
+  }
+
 }
 
 @media (min-width:1024px) {
@@ -1051,7 +1089,6 @@ footer {
     transition: all .5s ease-in-out;
     overflow: hidden;
     height: 0px;
-    /* display: none; */
   }
 
   .service-desc.is-active {
