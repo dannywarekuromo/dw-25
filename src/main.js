@@ -6,8 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /////////////// register gsap plugins: 
   gsap.registerPlugin(ScrollTrigger);
 
-  //////////////// gsap timelines: 
-  let tl = gsap.timeline({ defaults: { duration: .5 } });
+  
 
   ////////////// initialize Lenis: 
   const lenis = new Lenis();
@@ -15,6 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add((time) => {
     lenis.raf(time * 1000);
+    requestAnimationFrame(ScrollTrigger.update);
   })
   gsap.ticker.lagSmoothing(0);
 
@@ -43,6 +43,8 @@ document.addEventListener("DOMContentLoaded", () => {
   ///////////////// mobile navigation animation:
   const mobileNav = document.querySelector('.mobile-nav');
   const mobileBtn = document.querySelector('.mobile-btn');
+  const mobileNavItem = document.querySelectorAll('.m-nav-link');
+  const footerText = document.querySelectorAll('.nav-footer-text');
 
   let btnAnimate = gsap.to(mobileBtn, {
     duration: .5,
@@ -50,21 +52,53 @@ document.addEventListener("DOMContentLoaded", () => {
     paused: true
   })
 
-  mobileBtn.addEventListener('click', () => {
+  let linkAnimate = gsap.from(mobileNavItem, {
+    clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
+    duration: .5,
+    paused: true,
+    stagger: .3
+  })
 
+  let navFooterAnimate = gsap.from(footerText, {
+    clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
+    duration: .5,
+    paused: true,
+    stagger: .3
+  })
+
+  mobileBtn.addEventListener('click', () => {
+  
     mobileNav.classList.toggle('active');
+    
 
     if(mobileNav.classList.contains('active')){
       setTimeout(() => {mobileBtn.textContent = "close"}, 500)
       btnAnimate.play();
       setTimeout(() => {btnAnimate.reverse()}, 1000)
+      setTimeout(() => {linkAnimate.play()}, 1000)
+      setTimeout(() => {navFooterAnimate.play()}, 1000)
     } else {
       setTimeout(() => {mobileBtn.textContent = "menu"}, 500)
       btnAnimate.play();
+      linkAnimate.reverse();
+      navFooterAnimate.reverse();
       setTimeout(() => {btnAnimate.reverse()}, 1000)
     }
-    // mobileBtn.textContent = "close";
+  
   })
+
+
+  ///////////////// mobile nav link responsiveness
+  mobileNavItem.forEach((item) => {
+    
+    item.addEventListener('click', ()=> {
+      mobileNav.classList.toggle('active');
+      setTimeout(() => {mobileBtn.textContent = "menu"}, 500)
+      btnAnimate.play();
+      setTimeout(() => {btnAnimate.reverse()}, 1000)
+    })
+  })
+
 
 
   const animateCursorPosition = (event) => {
@@ -72,22 +106,32 @@ document.addEventListener("DOMContentLoaded", () => {
     gallantCursor.style.left = `${event.clientX}px`;
   };
 
-  ////////////////// intro text animations: 
+  ////////////////// hero text animations: 
+  //////////////// gsap timelines: 
+  let tl = gsap.timeline({ defaults: { duration: .5 } });
+  
   tl.from('.nav-link', {
     y: 50, stagger: .2
   })
+
   tl.from('.hero-title', {
-    y: 250
+    duration: .5,
+    clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
   })
     .from('.img-obj', {
-      y: 200
+      duration: .5,
+    clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
     })
     .from('.hero-span', {
-      y: 150,
-      opacity: 0, stagger: 0.1
+      duration: .5,
+      stagger: .3,
+    clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
     })
     .from('.hero-caret-stick', {
-      opacity: 0, stagger: .1
+      duration: .5,
+      opacity: 0,
+      stagger: .3,
+    clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
     })
 
 
@@ -186,6 +230,40 @@ document.addEventListener("DOMContentLoaded", () => {
       ease: 'power1.out',
       clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
     })
+  })
+
+  gsap.utils.toArray('.contact-roll').forEach((text) => {
+    gsap.from(text, {
+      scrollTrigger: {
+        trigger: text,
+        start: 'top 80%'
+      },
+      duration: .5,
+      ease: 'power1.out',
+      clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
+    })
+  })
+
+  gsap.utils.toArray('.contact-caption').forEach((text) => {
+    gsap.from(text, {
+      scrollTrigger: {
+        trigger: text,
+        start: 'top 80%'
+      },
+      duration: .5,
+      ease: 'power1.out',
+      clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
+    })
+  })
+
+  gsap.from('.footer-text', {
+      scrollTrigger: {
+        trigger: 'footer',
+        start: 'top 90%'
+      },
+      stagger: .3,
+      duration: .5,
+      clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
   })
 
 
