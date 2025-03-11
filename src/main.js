@@ -18,6 +18,24 @@ document.addEventListener("DOMContentLoaded", () => {
   })
   gsap.ticker.lagSmoothing(0);
 
+  ////////////////// preloader sequence: 
+  const preloadTl = gsap.timeline({ repeat: 1, repeatDelay: 1 });
+  preloadTl.from('.pre-img', {
+    scale: .3,
+    stagger: .3,
+    duration: .5
+  })
+
+  function preloaderAnimate() {
+    preloadTl.progress(1).reverse();
+  };
+
+  setTimeout(preloaderAnimate, 1500);
+  setTimeout(() => {
+    const preload = document.querySelector('.preloader');
+    preload.classList.add('inactive');
+  }, 3000);
+
   //////////////// navbar visibility:
   let previousScrollPosition = window.scrollY;
 
@@ -108,7 +126,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let tl = gsap.timeline({ defaults: { duration: .5 } });
 
   tl.from('.nav-link', {
-    y: 50, stagger: .2
+    y: 50, stagger: .2, delay: 2.8
   })
 
   tl.from('.hero-title', {
