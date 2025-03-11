@@ -6,7 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
   /////////////// register gsap plugins: 
   gsap.registerPlugin(ScrollTrigger);
 
-  
+
 
   ////////////// initialize Lenis: 
   const lenis = new Lenis();
@@ -32,9 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     previousScrollPosition = currentScrollPosition;
   }
-
-
-
 
   ///////////////// custom cursor: 
   const gallantCursor = document.querySelector('.custom-cursor');
@@ -67,35 +64,35 @@ document.addEventListener("DOMContentLoaded", () => {
   })
 
   mobileBtn.addEventListener('click', () => {
-  
-    mobileNav.classList.toggle('active');
-    
 
-    if(mobileNav.classList.contains('active')){
-      setTimeout(() => {mobileBtn.textContent = "close"}, 500)
+    mobileNav.classList.toggle('active');
+
+
+    if (mobileNav.classList.contains('active')) {
+      setTimeout(() => { mobileBtn.textContent = "close" }, 500)
       btnAnimate.play();
-      setTimeout(() => {btnAnimate.reverse()}, 1000)
-      setTimeout(() => {linkAnimate.play()}, 1000)
-      setTimeout(() => {navFooterAnimate.play()}, 1000)
+      setTimeout(() => { btnAnimate.reverse() }, 1000)
+      setTimeout(() => { linkAnimate.play() }, 1000)
+      setTimeout(() => { navFooterAnimate.play() }, 1000)
     } else {
-      setTimeout(() => {mobileBtn.textContent = "menu"}, 500)
+      setTimeout(() => { mobileBtn.textContent = "menu" }, 500)
       btnAnimate.play();
       linkAnimate.reverse();
       navFooterAnimate.reverse();
-      setTimeout(() => {btnAnimate.reverse()}, 1000)
+      setTimeout(() => { btnAnimate.reverse() }, 1000)
     }
-  
+
   })
 
 
   ///////////////// mobile nav link responsiveness
   mobileNavItem.forEach((item) => {
-    
-    item.addEventListener('click', ()=> {
+
+    item.addEventListener('click', () => {
       mobileNav.classList.toggle('active');
-      setTimeout(() => {mobileBtn.textContent = "menu"}, 500)
+      setTimeout(() => { mobileBtn.textContent = "menu" }, 500)
       btnAnimate.play();
-      setTimeout(() => {btnAnimate.reverse()}, 1000)
+      setTimeout(() => { btnAnimate.reverse() }, 1000)
     })
   })
 
@@ -109,7 +106,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ////////////////// hero text animations: 
   //////////////// gsap timelines: 
   let tl = gsap.timeline({ defaults: { duration: .5 } });
-  
+
   tl.from('.nav-link', {
     y: 50, stagger: .2
   })
@@ -120,18 +117,18 @@ document.addEventListener("DOMContentLoaded", () => {
   })
     .from('.img-obj', {
       duration: .5,
-    clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
+      clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
     })
     .from('.hero-span', {
       duration: .5,
       stagger: .3,
-    clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
+      opacity: 0
     })
     .from('.hero-caret-stick', {
       duration: .5,
       opacity: 0,
       stagger: .3,
-    clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
+      clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
     })
 
 
@@ -157,7 +154,7 @@ document.addEventListener("DOMContentLoaded", () => {
       },
       duration: .5,
       ease: 'power1.out',
-      clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
+      opacity: 0
     })
   })
 
@@ -191,7 +188,7 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: '.work',
       start: 'top top'
     },
-    clipPath:  'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
+    clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
     duration: .5,
     stagger: .3
   });
@@ -207,12 +204,12 @@ document.addEventListener("DOMContentLoaded", () => {
       clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
     })
   })
- 
+
   gsap.utils.toArray('.role-roll').forEach((text) => {
     gsap.from(text, {
       scrollTrigger: {
         trigger: text,
-        start: 'top 95%'
+        start: 'top 90%'
       },
       duration: .5,
       ease: 'power1.out',
@@ -224,11 +221,10 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.from(text, {
       scrollTrigger: {
         trigger: text,
-        start: 'top 95%'
+        start: 'top 90%'
       },
       duration: .5,
-      ease: 'power1.out',
-      clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
+      opacity: 0
     })
   })
 
@@ -248,23 +244,23 @@ document.addEventListener("DOMContentLoaded", () => {
     gsap.from(text, {
       scrollTrigger: {
         trigger: text,
-        start: 'top 80%'
+        start: 'top 90%'
       },
       duration: .5,
-      ease: 'power1.out',
-      clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
+      opacity: 0
     })
   })
 
   gsap.from('.footer-text', {
-      scrollTrigger: {
-        trigger: 'footer',
-        start: 'top 90%'
-      },
-      stagger: .3,
-      duration: .5,
-      clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
+    scrollTrigger: {
+      trigger: 'footer',
+      start: 'top 90%'
+    },
+    stagger: .3,
+    duration: .5,
+    opacity: 0
   })
+
 
 
   ///////////////////// hilight text 
@@ -288,8 +284,8 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelector('.vessel-vesper').classList.add('is-active')
       }, 500)
     }
-  }) 
-  
+  })
+
   /////////////////// text hover cursor animation:
   const hoverScale = document.querySelectorAll('.hover-anim');
   const hoverFade = document.querySelectorAll('.hover-fade');
