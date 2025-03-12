@@ -26,15 +26,17 @@ document.addEventListener("DOMContentLoaded", () => {
     duration: .5
   })
 
+  document.body.style.overflow = 'hidden';
+
   function preloaderAnimate() {
     preloadTl.progress(1).reverse();
   };
 
-  setTimeout(preloaderAnimate, 1500);
+  setTimeout(preloaderAnimate, 2000);
   setTimeout(() => {
     const preload = document.querySelector('.preloader');
     preload.classList.add('inactive');
-  }, 3000);
+  }, 3800);
 
   //////////////// navbar visibility:
   let previousScrollPosition = window.scrollY;
@@ -126,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
   let tl = gsap.timeline({ defaults: { duration: .5 } });
 
   tl.from('.nav-link', {
-    y: 50, stagger: .2, delay: 2.8
+    y: 50, stagger: .2, delay: 3.3
   })
 
   tl.from('.hero-title', {
@@ -139,7 +141,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .from('.hero-span', {
       duration: .5,
-      stagger: .3,
+      // stagger: .3,
       opacity: 0
     })
     .from('.hero-caret-stick', {
