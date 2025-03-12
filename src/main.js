@@ -26,16 +26,19 @@ document.addEventListener("DOMContentLoaded", () => {
     duration: .5
   })
 
-  document.body.style.overflow = 'hidden';
+  
 
   function preloaderAnimate() {
     preloadTl.progress(1).reverse();
   };
 
+  document.body.style.overflow = 'hidden';
+
   setTimeout(preloaderAnimate, 2000);
   setTimeout(() => {
     const preload = document.querySelector('.preloader');
     preload.classList.add('inactive');
+    document.body.style.overflow = 'visible';
   }, 3800);
 
   //////////////// navbar visibility:
