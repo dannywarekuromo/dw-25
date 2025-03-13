@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8" />
-  <link rel="icon" type="image/svg+xml" href="assets/logos/logo.svg"/>
+  <link rel="icon" type="image/svg+xml" href="assets/logos/logo.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="./src/style.css">
   <title>Daniel Warekuromo - Independent Front-end Developer</title>
@@ -17,19 +17,19 @@
     <div class="preloader px-auto py-1">
       <div class="loading-img-container px-auto">
         <div class="preload-img">
-          <img class="pre-img" src="./assets/selfie-2.jpg" alt="zoom one selfie" srcset="../assets/selfie-2.jpg">
+          <img class="pre-img" src="./src/assets/selfie-2.jpg" alt="zoom one selfie">
         </div>
         <div class="preload-img">
-          <img class="pre-img" src="./assets/selfie-3.jpg" alt="zoom two selfie" srcset="../assets/selfie-3.jpg">
+          <img class="pre-img" src="./src/assets/selfie-3.jpg" alt="zoom two selfie">
         </div>
         <div class="preload-img">
-          <img class="pre-img" src="./assets/selfie-4.jpg" alt="zoom three selfie" srcset="../assets/selfie-4.jpg">
+          <img class="pre-img" src="./src/assets/selfie-4.jpg" alt="zoom three selfie">
         </div>
         <div class="preload-img">
-          <img class="pre-img" src="./assets/selfie-5.jpg" alt="zoom four selfie" srcset="../assets/selfie-5.jpg">
+          <img class="pre-img" src="./src/assets/selfie-5.jpg" alt="zoom four selfie">
         </div>
         <div class="preload-img">
-          <img class="pre-img" src="./assets/ocean.jpg" alt="ocean wave" srcset="../assets/ocean.jpg">
+          <img class="pre-img" src="./src/assets/ocean.jpg" alt="ocean wave">
         </div>
       </div>
       <div class="preloader-title">
@@ -70,7 +70,7 @@
         <div class="nav-bar relative hover-link">
           <a href="#" class="nav-link-logo fit-content mask">
             <span class="nav-img">
-              <img src="./assets/logos/logo.svg" class="nav-logo" alt="warekuromotion logo">
+              <img src="./src/assets/logos/logo.svg" class="nav-logo" alt="warekuromotion logo">
               <!-- insert svg file here  -->
             </span>
             <span class="nav-title mid-title nav-text relative">
@@ -79,9 +79,12 @@
           </a>
           <nav class="nav">
             <ul class="nav-list flex-column-3">
-              <li class="nav-item mask"><a href="#about" class="nav-link morph-clr hover-link link-text">about</a></li>
-              <li class="nav-item mask"><a href="#work" class="nav-link morph-clr hover-link link-text">work</a></li>
-              <li class="nav-item mask"><a href="#contact" class="nav-link morph-clr hover-link link-text">contact</a>
+              <li class="nav-item mask"><a href="#about"
+                  class="nav-link morph-clr hover-link bar-line link-text">about</a></li>
+              <li class="nav-item mask"><a href="#work"
+                  class="nav-link morph-clr bar-line hover-link link-text">work</a></li>
+              <li class="nav-item mask"><a href="#contact"
+                  class="nav-link morph-clr bar-line hover-link link-text">contact</a>
               </li>
             </ul>
             <div class="nav-btn mask">
@@ -104,17 +107,18 @@
         <div class="hero-card flex-column-3">
           <div class="hero-body fit-content">
             <p class="body-text flex-column mask">
-              <span class="hero-span">I develop modern websites</span>
-              <span class="hero-span">with informed design systems</span>
-              <span class="hero-span">& immersive web experiences.</span>
+              <span class="hero-span">Web Development, Motion &mdash;</span>
+              <span class="hero-span">/Interaction Design,</span>
+              <span class="hero-span">Art Direction & All That Jazz.</span>
             </p>
           </div>
           <div class="hero-link hero-span relative">
-            <a href="#contact" class="link-text hover-link hero-cta"><span>let's</span><span>work</span><span>together</span></a>
+            <a href="#contact"
+              class="link-text fixed-bar-line hover-link mask hero-cta"><span>let's</span><span>work</span><span>together</span></a>
           </div>
         </div>
         <div class="hero-img">
-          <img class="img-obj hover-anim" src="./assets/self-square.jpg" alt="Potrait of Daniel Warekuromo">
+          <img class="img-obj hover-anim" src="./src/assets/self-square.jpg" alt="Potrait of Daniel Warekuromo">
         </div>
         <div class="hero-caret">
           <svg class="scroll-indicator hover-anim" width="69" height="70" viewBox="0 0 69 70" fill="none"
@@ -133,11 +137,11 @@
           <p class="fit-content caption-title absolute">/ about /</p>
           <div class="about-intro">
             <p class="body-text-bold hover-anim">
-              <span class="slide-text hi-liter">I am Daniel Warekuromo; a computer scientist </span><span
+              <span class="slide-text hi-liter">I am Daniel Warekuromo; a computer scientist</span> <span
                 class="slide-text">with
-                a knack for motion & interaction with web technologies.</span>
+                a knack for web motion and micro interactions.</span>
               <span class="slide-text">I
-                develop responsive and scalable experiences</span><span class="slide-text hi-liter"> with code as my
+                develop responsive and scalable experiences</span> <span class="slide-text hi-liter">with code as my
                 medium and
                 the web as my canvas of choice.</span>
             </p>
@@ -145,11 +149,15 @@
         </div>
       </section>
       <section class="services px-auto">
-        <p class="fit-content caption-title pb-4 ">/ services /</p>
+        <p class="fit-content caption-title pb-4 ">/ expertise /</p>
         <div class="service-text-panel">
-          <p class="body-text-cap"><span class="slide-text-3">i leverage front-end technologies, </span><span
-              class="slide-text-3">with graphics and motion software </span><span class="slide-text-3">to develop
-              immersive digital experiences.</span></p>
+          <p class="link-text flex-column-1"><span class="slide-text-3"><span>i</span> <span>leverage</span>
+              <span>my</span> <span>passion</span> <span>for</span> <span>creative</span></span>
+            <span class="slide-text-3"><span>art</span> <span>and</span> <span>web</span> <span>technology</span>
+              <span>to</span>
+              <span>develop</span></span><span class="slide-text-3"><span>engaging</span> <span>web</span>
+              <span>experiences.</span></span>
+          </p>
         </div>
         <div class="services-container py-4 flex-column">
           <div class="service-card py-4 flex-column-1">
@@ -336,33 +344,29 @@
 
         </div>
       </section>
-      <section id="contact" class="contact px-auto pb-4">
-        <p class="fit-content caption-title-alt pb-4 ">/ contact /</p>
+      <section id="contact" class="contact px-auto pt-6">
+        <p class="fit-content caption-title pb-4 ">/ contact /</p>
         <div class="contact-case flex-column-4">
-          <h3 class="intro-title-alt hover-anim contact-roll flex-column fit-content">
-            <span>Enough Said</span>
-            <span>GET IN TOUCH</span>
+          <h3 class="link-text flex-column-1 hover-anim contact-roll fit-content">
+            <span class="caption-span"><span>enough</span> <span>said,</span> <span>get</span> <span>in</span>
+              <span>touch</span></span>
+            <span class="caption-span"><span>with</span> <span>your</span> <span>project</span>
+              <span>ideas</span></span>
           </h3>
           <div class="contact-link flex-column">
-            <p class="body-text-alt contact-caption">Have some project idea(s)? Send an email</p>
             <a href="mailto:warekuromotion@gmail.com"
-              class="mid-title-alt fit-content contact-caption hover-link contact-cta mask ">warekuromotion@gmail.com</a>
+              class="text-title fit-content contact-caption hover-link contact-cta mask ">warekuromotion@gmail.com</a>
           </div>
         </div>
       </section>
     </main>
     <footer class="px-auto hover-fade py-4">
-      <div class="footer-socials flex-column-1">
-        <p class="body-text-cap footer-text">
-          connect with me on socials;
-        </p>
-        <div class="footer-socials footer-text flex-between mask">
-          <a href="#" class="link-text">instagram</a>
-          <a href="#" class="link-text">linkedin</a>
-          <a href="#" class="link-text">github</a>
-        </div>
+      <div class="footer-socials footer-text flex-between mask">
+        <a href="#" class="link-text bar-line">instagram</a>
+        <a href="#" class="link-text">linkedin</a>
+        <a href="#" class="link-text">github</a>
       </div>
-      <p class="body-text footer-text">Developed & designed by yours truly, WARE.</p>
+      <p class="body-text footer-text">Design/Development by Daniel Warekuromo &copy;2025</p>
     </footer>
   </div>
   <script type="module" src="/src/main.js"></script>

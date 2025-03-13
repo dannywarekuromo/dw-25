@@ -277,7 +277,7 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.from('.footer-text', {
     scrollTrigger: {
       trigger: 'footer',
-      start: 'top 90%'
+      start: 'top 100%'
     },
     stagger: .3,
     duration: .5,
