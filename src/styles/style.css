@@ -192,7 +192,7 @@ button {
 .display-title {
   font-family: var(--title-ff);
   font-size: var(--display-1);
-  font-weight: 800;
+  font-weight: 600;
   line-height: 1.1;
   text-transform: uppercase;
   letter-spacing: -8px;
@@ -229,9 +229,9 @@ button {
 .text-title-alt {
   font-family: var(--title-ff);
   font-size: var(--title-3);
-  font-weight: 600;
+  font-weight: 500;
   letter-spacing: -2px;
-  /* white-space: nowrap; */
+  white-space: nowrap;
 }
 
 .caption-title,
@@ -247,7 +247,7 @@ button {
   font-family: var(--text-ff);
   font-size: var(--text-2);
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 400;
 }
 
 
@@ -974,7 +974,12 @@ footer {
 }
 
 .contact-cta {
-  line-height: 1.4;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.contact-cta {
+  text-decoration: underline;
 }
 
 .custom-cursor {

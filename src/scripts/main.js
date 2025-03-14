@@ -1,18 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
 
   ///////////// register gsap plugins: 
-  gsap.registerPlugin(ScrollTrigger);
-
-
-
-  ////////////// initialize Lenis: 
-  const lenis = new Lenis();
-
-  lenis.on('scroll', ScrollTrigger.update);
-  gsap.ticker.add((time) => {
-    lenis.raf(time * 500);
-  })
-  gsap.ticker.lagSmoothing(0);
+  // gsap.registerPlugin(ScrollTrigger);
 
   ////////////////// preloader sequence: 
   const preloadTl = gsap.timeline({ repeat: 1, repeatDelay: 1 });
