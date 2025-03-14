@@ -11,7 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
     duration: .5
   })
 
-  
+
 
   function preloaderAnimate() {
     preloadTl.progress(1).reverse();
@@ -27,19 +27,22 @@ document.addEventListener("DOMContentLoaded", () => {
   }, 3800);
 
   //////////////// navbar visibility:
-  let previousScrollPosition = window.scrollY;
+  let lastScrollTop = 0;
+  const navbar = document.querySelector(".header");
 
-  let navBarAnimate = () => {
-    const navHeader = document.querySelector('.header');
-    const currentScrollPosition = window.scrollY;
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
 
+    if (currentScroll > lastScrollTop) {
+      // Scrolling down
+      navbar.classList.add("is-inactive");
+    } else {
+      // Scrolling up
+      navbar.classList.remove("is-inactive");
+    }
 
-    (currentScrollPosition > previousScrollPosition) ?
-      setTimeout(() => navHeader.classList.add('is-inactive'), 500) :
-      setTimeout(() => navHeader.classList.remove('is-inactive'), 500);
-
-    previousScrollPosition = currentScrollPosition;
-  }
+    lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Prevent negative scroll values
+  });
 
   ///////////////// custom cursor: 
   const gallantCursor = document.querySelector('.custom-cursor');
@@ -344,7 +347,7 @@ document.addEventListener("DOMContentLoaded", () => {
   ////////////// on-scroll event trigger:
   window.addEventListener('scroll', () => {
     // animateSVG();
-    navBarAnimate();
+    // navBarAnimate();
   }
   );
 

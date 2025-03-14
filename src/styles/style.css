@@ -237,7 +237,7 @@ button {
 .caption-title,
 .caption-title-alt {
   font-family: var(--text-ff);
-  font-size: var(--text-2);
+  font-size: var(--text-3);
   text-transform: uppercase;
   letter-spacing: 8px;
 }
@@ -245,9 +245,9 @@ button {
 .link-text,
 .link-text-alt {
   font-family: var(--text-ff);
-  font-size: var(--text-2);
+  font-size: var(--text-3);
   text-transform: uppercase;
-  font-weight: 400;
+  /* font-weight: 500; */
 }
 
 
