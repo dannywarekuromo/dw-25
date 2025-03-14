@@ -1,9 +1,6 @@
-import { gsap, ScrollTrigger } from "../node_modules/gsap/all.js";
-import Lenis from "../node_modules/lenis/dist/lenis.mjs";
-
 document.addEventListener("DOMContentLoaded", () => {
 
-  /////////////// register gsap plugins: 
+  ///////////// register gsap plugins: 
   gsap.registerPlugin(ScrollTrigger);
 
 
@@ -13,8 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.add((time) => {
-    lenis.raf(time * 1000);
-    requestAnimationFrame(ScrollTrigger.update);
+    lenis.raf(time * 500);
   })
   gsap.ticker.lagSmoothing(0);
 
