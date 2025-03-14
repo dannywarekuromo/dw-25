@@ -11,8 +11,6 @@ document.addEventListener("DOMContentLoaded", () => {
     duration: .5
   })
 
-
-
   function preloaderAnimate() {
     preloadTl.progress(1).reverse();
   };
@@ -124,7 +122,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
   tl.from('.hero-title', {
     duration: .5,
-    clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
+    y: 100,
+    opacity: 0
   })
     .from('.img-obj', {
       duration: .5,
@@ -132,8 +131,7 @@ document.addEventListener("DOMContentLoaded", () => {
     })
     .from('.hero-span', {
       duration: .5,
-      // stagger: .3,
-      opacity: 0
+      clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
     })
     .from('.hero-caret-stick', {
       duration: .5,
@@ -145,28 +143,15 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //////////////// scroll text animation: 
 
-  gsap.utils.toArray('.slide-text-3').forEach((text) => {
-    gsap.from(text, {
-      scrollTrigger: {
-        trigger: '.service-text-panel',
-        start: 'top 95%'
-      },
-      duration: .5,
-      ease: 'power1.out',
-      clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
-    })
-  })
-
-  gsap.utils.toArray('.service-leads').forEach((text) => {
-    gsap.from(text, {
-      scrollTrigger: {
-        trigger: text,
-        start: 'top 95%'
-      },
-      duration: .5,
-      ease: 'power1.out',
-      opacity: 0
-    })
+  gsap.from('.slide-text-3', {
+    scrollTrigger: {
+      trigger: '.service-text-panel',
+      start: 'top 90%'
+    },
+    stagger: .3,
+    duration: .5,
+    ease: 'power1.out',
+    clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
   })
 
   gsap.utils.toArray('.service-text-title').forEach((text) => {
@@ -178,6 +163,19 @@ document.addEventListener("DOMContentLoaded", () => {
       duration: .5,
       ease: 'power1.out',
       clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)'
+    })
+  })
+
+
+  gsap.utils.toArray('.service-leads').forEach((text) => {
+    gsap.from(text, {
+      scrollTrigger: {
+        trigger: text,
+        start: 'top 95%'
+      },
+      duration: .5,
+      ease: 'power1.out',
+      opacity: 0
     })
   })
 
@@ -289,7 +287,6 @@ document.addEventListener("DOMContentLoaded", () => {
   ScrollTrigger.create({
     trigger: ".animated-svg",
     start: 'top center',
-    // toogleClass: '.is-active'
     onEnter: () => {
       setTimeout(() => {
         document.querySelector('.vessel-vesper').classList.add('is-active')
@@ -343,13 +340,6 @@ document.addEventListener("DOMContentLoaded", () => {
       fadeCarret.reverse();
     })
   })
-
-  ////////////// on-scroll event trigger:
-  window.addEventListener('scroll', () => {
-    // animateSVG();
-    // navBarAnimate();
-  }
-  );
 
   window.addEventListener('mousemove', animateCursorPosition);
 })

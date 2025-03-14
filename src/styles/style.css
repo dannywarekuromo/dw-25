@@ -1,11 +1,10 @@
 @font-face {
   font-family: "Montserrat";
-  src: url(../fonts/Montserrat-VariableFont_wght.ttf);
+  src: url(../assets/fonts/Montserrat-VariableFont_wght.ttf);
 }
-
 @font-face {
   font-family: "Oswald";
-  src: url(../fonts/Oswald-VariableFont_wght.ttf);
+  src: url(../assets/fonts/Oswald-VariableFont_wght.ttf);
 }
 
 * {
@@ -33,7 +32,7 @@
   --text-ff: "Montserrat", serif;
 
   /* font size : title  */
-  --display-1: 38vw;
+  --display-1: 36vw;
   /* tab and up display-2
   --display-2: 12vw; */
   /* mobile and down
@@ -44,7 +43,7 @@
   --title-4: 3.5rem;
 
   /* font size : text  */
-  --text-3: 0.75rem;
+  --text-3: 0.7rem;
   /*12px */
   --text-2: 0.625rem;
   /*14px = 0.875rem*/
@@ -205,7 +204,7 @@ button {
 .intro-title-alt {
   font-family: var(--title-ff);
   font-size: var(--display-2);
-  font-weight: 700;
+  font-weight: 600;
   line-height: 1.1;
   color: var(--dorminant-clr);
   letter-spacing: -4px;
@@ -247,7 +246,7 @@ button {
   font-family: var(--text-ff);
   font-size: var(--text-3);
   text-transform: uppercase;
-  /* font-weight: 500; */
+  font-weight: 500;
 }
 
 
@@ -658,8 +657,8 @@ button {
   border-top: 1px solid var(--tint-3);
 }
 
-.hero-title,
 .img-obj,
+.hero-span,
 .hero-caret-stick,
 .service-text-title,
 .carret-case,
@@ -789,6 +788,7 @@ footer {
 footer {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--ws-2);
 }
 
@@ -846,7 +846,7 @@ footer {
 }
 
 .vessel-vesper {
-  transition: all o.8 ease-in-out;
+  /* transition: all o.8 ease-in-out; */
   opacity: 0;
 }
 
@@ -854,16 +854,10 @@ footer {
   opacity: 1;
 }
 
-.vessel-vesper.is-active .grid-line {
+.vessel-vesper.is-active .grid-iron {
   stroke-dasharray: 500;
   stroke-dashoffset: 500;
   animation: grid 5s reverse;
-}
-
-.v-line,
-.h-line {
-  stroke-dashoffset: 500;
-  stroke-dasharray: 500;
 }
 
 @keyframes grid {
@@ -1322,4 +1316,8 @@ footer {
   .contact-case h3 {
     width: 20%;
   }
+}
+
+.logo-svg {
+
 }
