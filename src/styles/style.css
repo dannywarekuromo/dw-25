@@ -2,6 +2,7 @@
   font-family: "Montserrat";
   src: url(../assets/fonts/Montserrat-VariableFont_wght.ttf);
 }
+
 @font-face {
   font-family: "Oswald";
   src: url(../assets/fonts/Oswald-VariableFont_wght.ttf);
@@ -33,11 +34,8 @@
 
   /* font size : title  */
   --display-1: 36vw;
-  /* tab and up display-2
-  --display-2: 12vw; */
-  /* mobile and down
-  --display-2: 2.8rem; */
-  --display-2: 3.2rem;
+  --display-2: 5rem; 
+
   --title-2: 1.5rem;
   --title-3: 2.5rem;
   --title-4: 3.5rem;
@@ -76,14 +74,14 @@
 
 @media (max-width:324px) {
   :root {
-    --display-2: 2.8rem;
+    /* --display-2: 5rem; */
   }
 }
 
 @media (min-width:524px) {
   :root {
     --display-1: 32vw;
-    --display-2: 12.5vw;
+    /* --display-2: 24vw; */
   }
 }
 
@@ -420,7 +418,9 @@ button {
 @keyframes flipstick {
   0% {
     transform: translateY(-20%);
-  } 100% {
+  }
+
+  100% {
     transform: translateY(0%);
   }
 }
@@ -670,7 +670,12 @@ button {
   border-top: 1px solid var(--tint-3);
 }
 
-.img-obj,
+.img-obj {
+  /* transform: scaleX(-1); */
+  opacity: 1;
+}
+
+
 .hero-span,
 .hero-caret-stick,
 .service-text-title,
@@ -680,7 +685,8 @@ button {
 .slide-text-3,
 .mobile-btn,
 .contact-roll,
-.nav-footer-text {
+.nav-footer-text,
+.vessel {
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
 }
 
@@ -910,10 +916,35 @@ footer {
 .vesper {
   transition: all 0.5s ease-in;
   clip-path: circle(0.5% at 50% 50%);
+  transform: translateX(0%);
+}
+
+@keyframes gliding {
+  from {
+    transform: translateX(-65%);
+  } to {
+    transform: translateX(45%);
+  }
 }
 
 .vessel-vesper.is-active .vesper {
   clip-path: circle(50% at 50% 50%);
+  animation: gliding 8s 5s forwards infinite;
+}
+
+.vessel {
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  transform-origin: center center;
+  transform: rotate(0deg);
+  animation: wavy 8s 5s forwards infinite;
+}
+
+@keyframes wavy {
+  from {
+    transform: rotate(-10deg);
+  } to {
+    transform: rotate(10deg);
+  }
 }
 
 .vessel-vesper.is-active .vessel {
@@ -1235,6 +1266,7 @@ footer {
 }
 
 @media (min-width:1024px) {
+
   /* custom cursor  */
   .custom-cursor {
     display: block;
@@ -1335,6 +1367,4 @@ footer {
   }
 }
 
-.logo-svg {
-
-}
+.logo-svg {}

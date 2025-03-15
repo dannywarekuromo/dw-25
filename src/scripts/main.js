@@ -127,7 +127,8 @@ document.addEventListener("DOMContentLoaded", () => {
   })
     .from('.img-obj', {
       duration: .5,
-      clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
+      scale: .3,
+      opacity: 0
     })
     .from('.hero-span', {
       duration: .5,
