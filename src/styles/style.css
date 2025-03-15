@@ -43,10 +43,9 @@
   --title-4: 3.5rem;
 
   /* font size : text  */
-  --text-3: 0.7rem;
-  /*12px */
+  --text-4: 0.7rem;
+  --text-3: 0.65rem;
   --text-2: 0.625rem;
-  /*14px = 0.875rem*/
   --text-1: 1.5rem;
   /*24px */
 
@@ -97,12 +96,10 @@
     --title-4: 4.5rem;
 
     /* font size : text  */
-    --text-3: 0.8rem;
-    /*12px */
+    --text-4: 0.75rem;
+    --text-3: 0.7rem;
     --text-2: 0.65rem;
-    /*14px = 0.875rem*/
     --text-1: 2rem;
-    /*24px */
 
     /* whitespace  */
     --ws-auto: 4%;
@@ -204,7 +201,7 @@ button {
 .intro-title-alt {
   font-family: var(--title-ff);
   font-size: var(--display-2);
-  font-weight: 600;
+  font-weight: 500;
   line-height: 1.1;
   color: var(--dorminant-clr);
   letter-spacing: -4px;
@@ -272,7 +269,7 @@ button {
 .body-text,
 .body-text-alt {
   font-family: var(--text-ff);
-  font-size: var(--text-3);
+  font-size: var(--text-4);
   line-height: 1.6;
 }
 
@@ -281,7 +278,7 @@ button {
 .m-nav-title {
   font-family: var(--title-ff);
   font-size: var(--title-4);
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -4px;
   text-transform: uppercase;
   color: var(--complimentary-clr);
@@ -378,8 +375,6 @@ button {
 /* preloader */
 .preloader {
   background-color: var(--complimentary-clr);
-  /* width: 100%;
-  height: 100vh; */
   display: grid;
   grid-template-rows: repeat(3, 1fr);
   position: fixed;
@@ -398,21 +393,39 @@ button {
 }
 
 .loading-text {
-  grid-row: 3/4;
+  grid-row: 2/3;
   display: flex;
-  align-items: end;
-  justify-content: end;
+  align-items: center;
+  justify-content: center;
 }
 
 .loading-img-container {
   position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  bottom: var(--ws-4);
+  right: 0%;
+  transform: translateX(0%);
   display: flex;
   justify-content: space-between;
   width: 100%;
 }
+
+.loading-stick {
+  position: relative;
+  transform: translateY(0%);
+  transition: all ease-in-out;
+  color: var(--accent-clr);
+  animation: bounce 0.5s forwards infinite;
+}
+
+@keyframes flipstick {
+  0% {
+    transform: translateY(-20%);
+  } 100% {
+    transform: translateY(0%);
+  }
+}
+
+
 
 .preload-img {
   width: 50px;
@@ -662,7 +675,6 @@ button {
 .hero-caret-stick,
 .service-text-title,
 .carret-case,
-.intro-roll,
 .period-roll,
 .role-roll,
 .slide-text-3,
@@ -977,6 +989,7 @@ footer {
 }
 
 .custom-cursor {
+  display: none;
   width: 24px;
   height: 24px;
   transition: all 0.001ms ease;
@@ -1222,6 +1235,10 @@ footer {
 }
 
 @media (min-width:1024px) {
+  /* custom cursor  */
+  .custom-cursor {
+    display: block;
+  }
 
   /* preloader  */
   .loading-img-container {

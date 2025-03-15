@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
-
-  ///////////// register gsap plugins: 
-  // gsap.registerPlugin(ScrollTrigger);
+  window.onbeforeunload = () => {
+    window.scrollTo(0,0);
+  }
 
   ////////////////// preloader sequence: 
   const preloadTl = gsap.timeline({ repeat: 1, repeatDelay: 1 });
@@ -140,6 +140,14 @@ document.addEventListener("DOMContentLoaded", () => {
       clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
     })
 
+  // Set scroll restoration to manual
+  history.scrollRestoration = 'manual';
+
+  // Scroll to the top on page load
+  window.onload = function () {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  };
+
 
   //////////////// scroll text animation: 
 
@@ -197,7 +205,8 @@ document.addEventListener("DOMContentLoaded", () => {
       trigger: '.work',
       start: 'top top'
     },
-    clipPath: 'polygon(0 100%, 100% 100%, 100% 100%, 0 100%)',
+    opacity: 0,
+    y: 50,
     duration: .5,
     stagger: .3
   });
