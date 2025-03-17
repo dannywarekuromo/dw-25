@@ -72,12 +72,6 @@
 1025–1200 px: Desktops, like most laptops and desktops 
 1201 px and up: TV and extra large screens  */
 
-@media (max-width:324px) {
-  :root {
-    /* --display-2: 5rem; */
-  }
-}
-
 @media (min-width:524px) {
   :root {
     --display-1: 32vw;
@@ -864,17 +858,22 @@ footer {
 }
 
 .vessel-vesper {
-  /* transition: all o.8 ease-in-out; */
-  opacity: 0;
+  transition: all 0.8s ease-in-out;
+  /* opacity: 0; */
+  transform: translateY(50%);
 }
 
 .vessel-vesper.is-active {
-  opacity: 1;
+  /* opacity: 1; */
+  transform: translateY(0%);
+}
+
+.grid-iron {
+  stroke-dasharray: 500;
+  stroke-dashoffset: 500;
 }
 
 .vessel-vesper.is-active .grid-iron {
-  stroke-dasharray: 500;
-  stroke-dashoffset: 500;
   animation: grid 5s reverse;
 }
 
@@ -888,9 +887,12 @@ footer {
   }
 }
 
-.vessel-vesper.is-active .ingrid {
+.ingrid {
   stroke-dasharray: 0, 4;
   stroke-dashoffset: 800;
+}
+
+.vessel-vesper.is-active .ingrid {
   animation: ingrid 5.7s .5s reverse;
 }
 
@@ -919,38 +921,44 @@ footer {
   transform: translateX(0%);
 }
 
-@keyframes gliding {
-  from {
-    transform: translateX(-65%);
-  } to {
-    transform: translateX(45%);
-  }
-}
-
 .vessel-vesper.is-active .vesper {
   clip-path: circle(50% at 50% 50%);
-  animation: gliding 8s 5s forwards infinite;
+  animation: gliding 8s 7s forwards infinite;
+}
+
+@keyframes gliding {
+  0% {
+    transform: translateX(0%);
+  } 50% {
+    transform: translateX(20%);
+  } 100% {
+    transform: translateX(0%);
+  }
 }
 
 .vessel {
+  transition: all 0.5s 3s ease-in-out;
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
   transform-origin: center center;
   transform: rotate(0deg);
-  animation: wavy 8s 5s forwards infinite;
 }
 
-@keyframes wavy {
-  from {
+@keyframes sway {
+  0% {
+    transform: rotate(0deg);
+  } 50% {
     transform: rotate(-10deg);
-  } to {
-    transform: rotate(10deg);
-  }
+  } 100% {
+    transform: rotate(0deg);
+  } 
 }
 
 .vessel-vesper.is-active .vessel {
-  stroke-dasharray: 300;
+  /* stroke-dasharray: 300;
   stroke-dashoffset: 300;
-  animation: drawline 1s 3.5s forwards;
+  animation: drawline 1s 3.5s forwards; */
+  clip-path: (0 100%, 100% 100%, 100% 100%, 0 100%);
+  animation: sway 8s 7s forwards infinite;
 }
 
 @keyframes drawline {
@@ -1366,5 +1374,3 @@ footer {
     width: 20%;
   }
 }
-
-.logo-svg {}
