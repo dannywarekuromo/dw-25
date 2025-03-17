@@ -200,7 +200,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-
   gsap.from('.intro-roll', {
     scrollTrigger: {
       trigger: '.work',
@@ -210,7 +209,28 @@ document.addEventListener("DOMContentLoaded", () => {
     y: 50,
     duration: .5,
     stagger: .3
-  });
+  }) 
+
+  gsap.from('.intro-slide', {
+    scrollTrigger: {
+      trigger: '.intro-slide',
+      start: 'top 70%'
+    },
+    opacity: 0,
+    x: -50,
+    duration: .3
+  })
+
+  gsap.from('.intro-roll-2', {
+    scrollTrigger: {
+      trigger: '.intro-roll-2',
+      start: 'top 70%'
+    }, 
+    opacity: 0,
+    y: 50,
+    duration: .5,
+    stagger: .3
+  })
 
   gsap.utils.toArray('.period-roll').forEach((text) => {
     gsap.from(text, {

@@ -709,15 +709,15 @@ p .slide-text-2 {
 
 
 
-.intro-roll:nth-child(1) {
+.intro-roll:nth-child(1), .intro-roll-2:nth-child(1) {
   color: var(--tint-1);
 }
 
-.intro-roll:nth-child(2) {
+.intro-roll:nth-child(2), .intro-roll-2:nth-child(2) {
   color: var(--tint-2);
 }
 
-.intro-roll:nth-child(3) {
+.intro-slide {
   color: var(--accent-clr);
   text-align: right;
 }
