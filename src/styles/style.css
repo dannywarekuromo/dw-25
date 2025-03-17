@@ -458,7 +458,7 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   background-color: #e3dfdc44;
-  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
   border-radius: 50px;
   box-shadow: 1px 1px 2px var(--tint-3);
   border-top: 1px solid var(--tint-1);
