@@ -283,6 +283,11 @@ button {
   padding-right: var(--ws-auto);
 }
 
+.px-1 {
+  padding-right: var(--ws-1);
+  padding-left: var(--ws-1);
+}
+
 .py-3 {
   padding-top: var(--ws-3);
   padding-bottom: var(--ws-3);
@@ -458,6 +463,16 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   width: 100%;
+  border-radius: 15px;
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  -moz-backdrop-filter: blur(4px);
+  -o-backdrop-filter: blur(4px);
+  -ms-backdrop-filter: blur(4px);
+  box-shadow: 1px 1px 2px var(--tint-3);
+  border-top: 1px solid var(--tint-2);
+  border-left: 1px solid var(--tint-2);
+  background-color: #E3DFDC99;
   margin: 0 auto;
 }
 
@@ -476,7 +491,7 @@ button {
 
 .header-title {
   font-family: var(--title-ff);
-  font-size: var(--text-1);
+  font-size: 1.5rem;
   font-weight: 400;
   letter-spacing: -1px;
   line-height: .6;

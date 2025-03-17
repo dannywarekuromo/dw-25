@@ -105,21 +105,6 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
-  ////////////////// nav color switch
-  const switchColor = gsap.to('.morph-clr', {
-    color: '#fff',
-    paused: true
-  })
-  ScrollTrigger.create({
-    trigger: '.work',
-    start: 'top top',
-    onToggle: () => {
-      switchColor.play();
-    }
-  })
-
-
-
   const animateCursorPosition = (event) => {
     gallantCursor.style.top = `${event.clientY}px`;
     gallantCursor.style.left = `${event.clientX}px`;
