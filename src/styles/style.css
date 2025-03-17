@@ -462,6 +462,13 @@ button {
 .nav-bar {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  background-color: #e3dfdc44;
+  backdrop-filter: blur(8px);
+  border-radius: 50px;
+  box-shadow: 1px 1px 2px var(--tint-3);
+  border-top: 1px solid var(--tint-1);
+  border-left: 1px solid var(--tint-1);
+  /* outline: 1px dotted var(--accent-clr); */
   width: 100%;
   border-radius: 15px;
   backdrop-filter: blur(4px);
