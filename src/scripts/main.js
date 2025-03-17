@@ -105,6 +105,19 @@ document.addEventListener("DOMContentLoaded", () => {
     })
   })
 
+  ////////////////// nav color switch
+  const switchColor = gsap.to('.morph-clr', {
+    color: '#fff',
+    paused: true
+  })
+  ScrollTrigger.create({
+    trigger: '.work',
+    start: 'top top',
+    onToggle: () => {
+      switchColor.play();
+    }
+  })
+
 
 
   const animateCursorPosition = (event) => {
@@ -294,7 +307,7 @@ document.addEventListener("DOMContentLoaded", () => {
   gsap.from('.footer-text', {
     scrollTrigger: {
       trigger: 'footer',
-      start: 'top 100%'
+      start: 'top 90%'
     },
     stagger: .3,
     duration: .5,
